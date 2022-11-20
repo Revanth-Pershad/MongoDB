@@ -1,23 +1,21 @@
 import mongoose  from "mongoose";
-import User from "./model.js";
+import CompUser from "./model.js";
 
-const MONGO_URL = '<Your String>';
+const MONGO_URL = 'mongodb+srv://Revanth:aaxAdmJzcyeP96J0@cluster0.18qdq85.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(MONGO_URL, () => {
     console.log("Connected to MongoDB");
 });
 
 async function handlr(){
-    const user = await User.create({
+    const compuser = await CompUser.create({
         "name" : "User 2",
-        "age"  : 25
+        "age"  : 25,
+        "address" : {
+            "HouseNum" : 52,
+            "StreetNum" : 64
+        }
     });
 }
 
-const getUser = async () =>{
-    const users = await User.find();
-    console.log(users);
-}
-
 handlr();
-getUser();

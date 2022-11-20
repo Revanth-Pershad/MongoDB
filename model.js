@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+const addressSchema = mongoose.Schema({
+    HouseNum : Number, 
+    StreetNum : Number
+})
+
 const userSchema = mongoose.Schema({
     name : {
         type : String,
@@ -8,7 +13,8 @@ const userSchema = mongoose.Schema({
     age : {
         type : Number,
         required : true
-    }
-})
+    }, 
+    address : addressSchema
+}, {timestamps : true})
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("CompUser", userSchema);
