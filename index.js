@@ -1,7 +1,7 @@
 import mongoose  from "mongoose";
 import CompUser from "./model.js";
 
-const MONGO_URL = 'mongodb+srv://Revanth:aaxAdmJzcyeP96J0@cluster0.18qdq85.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URL = '<Your Credentials>';
 
 mongoose.connect(MONGO_URL, () => {
     console.log("Connected to MongoDB");
